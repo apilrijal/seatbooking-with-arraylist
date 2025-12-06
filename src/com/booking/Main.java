@@ -1,6 +1,6 @@
-package com.lesson.lab;
+package com.booking;
 
-import com.lesson.lab.controller.SeatBooking;
+import com.booking.controller.SeatBooking;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -32,6 +32,9 @@ public class Main {
                     // use a print statement to instruct the user to enter a seat number for booking.
                     // take the seat number input from the user.
                     // pass the seat number to the addNewBooking method to add the
+                    System.out.println("Enter a seat number to book: ");
+                    String seat = keyboard.nextLine();
+                    bookingManager.addNewBooking(seat);
 
                     break;
                 case 2:
@@ -39,6 +42,10 @@ public class Main {
                     // print a message instructing the user to enter the seat number they wish to cancel.
                     // take the seat number input from the user.
                     // call the cancelBooking method with the provided seat number to cancel the booking.
+                    System.out.println("Enter a seat number to cancel: ");
+                    String seatToCancel = keyboard.nextLine();
+                    bookingManager.cancelBooking(seatToCancel);
+
                     break;
                 case 3:
                     // TODO 18: update booking
@@ -47,9 +54,15 @@ public class Main {
                     // prompt the user to enter the new seat number.
                     // take the new seat number input from the user.
                     // call the updateBooking method with the old and new seat numbers to update the booking.
+                    System.out.println("Enter your existing seat number to update booking: ");
+                    String seatToUpdate = keyboard.nextLine();
 
+                    System.out.println("Enter your new seat number to update booking: ");
+                    String newSeat = keyboard.nextLine();
 
+                    bookingManager.updateBooking(seatToUpdate, newSeat);
                     break;
+
                 case 4:
                     // display the all bookings
                     // check if the bookedSeatsList is empty, inform the user that no bookings have been made yet
@@ -57,6 +70,7 @@ public class Main {
                     // display the seat number and booking date
                     bookingManager.displayBookings();
                     break;
+
                 case 5:
                     System.out.println("Exiting program.");
                     keyboard.close();
