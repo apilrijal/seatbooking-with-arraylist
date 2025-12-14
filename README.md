@@ -175,7 +175,7 @@ Migration to Spring Boot REST API
 
 ## 👤 Author
 
-Aaron Rijal
+Apil Rijal
 Java Developer | Backend & Console Applications
 📍 Australia
 
